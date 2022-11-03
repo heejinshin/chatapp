@@ -106,14 +106,15 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                             style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
-                                color: Palette.textColor1
+                                color: !isSignupScreen ? Palette.activeColor
+                                    : Palette.textColor1
                             ),
                           ),
+                          if(!isSignupScreen)
                           Container(
                             height: 2,
                             width: 55,
                             color: Colors.orange,
-                            margin: EdgeInsets.only(top: 3),
                           )
                         ],
                       ),
@@ -131,9 +132,11 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                               style: TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold,
-                                  color: Palette.activeColor
+                                  color: isSignupScreen ? Palette.activeColor
+                                      : Palette.textColor1
                               ),
                             ),
+                            if(isSignupScreen)
                             Container(
                               height: 2,
                               width: 55,
@@ -144,6 +147,39 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                         ),
                       )
                     ],
+                  ),
+                  Container(
+                    child: Form(
+                      child: Column(
+                        children: [
+                          TextFormField(
+                            decoration: InputDecoration(
+                              prefixIcon: Icon(Icons.account_circle,
+                              color: Palette.iconColor,
+                              ),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Palette.textColor1
+                                ),
+                                borderRadius: BorderRadius.all(Radius.circular(35.0))
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                      color: Palette.textColor1
+                                  ),
+                                  borderRadius: BorderRadius.all(Radius.circular(35.0))
+                              ),
+                              hintText: 'User name',
+                              hintStyle: TextStyle(
+                                fontSize: 14,
+                                color: Palette.textColor1
+                              ),
+                              contentPadding: EdgeInsets.all(10)
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
                   )
                 ],
               ),
