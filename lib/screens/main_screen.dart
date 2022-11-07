@@ -17,6 +17,7 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
       backgroundColor: Palette.backgroundColor,
       body: Stack(
         children: [
+          // 포지션1;배경
           Positioned(
               top: 0,
               right: 0,
@@ -70,6 +71,7 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                   ),
                 ),
               ),
+          //포지션2;텍스트폼필드
           Positioned(
             top: 180,
             child: Container(
@@ -149,6 +151,7 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                     ],
                   ),
                   Container(
+                    margin: EdgeInsets.only(top: 20),
                     child: Form(
                       child: Column(
                         children: [
@@ -176,6 +179,58 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                               ),
                               contentPadding: EdgeInsets.all(10)
                             ),
+                          ),
+                          SizedBox(height: 8,),
+                          TextFormField(
+                            decoration: InputDecoration(
+                                prefixIcon: Icon(Icons.account_circle,
+                                  color: Palette.iconColor,
+                                ),
+                                enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                        color: Palette.textColor1
+                                    ),
+                                    borderRadius: BorderRadius.all(Radius.circular(35.0))
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                        color: Palette.textColor1
+                                    ),
+                                    borderRadius: BorderRadius.all(Radius.circular(35.0))
+                                ),
+                                hintText: 'User name',
+                                hintStyle: TextStyle(
+                                    fontSize: 14,
+                                    color: Palette.textColor1
+                                ),
+                                contentPadding: EdgeInsets.all(10)
+                            ),
+                          ),
+                          SizedBox(height: 8,),
+                          TextFormField(
+                            decoration: InputDecoration(
+                                prefixIcon: Icon(Icons.account_circle,
+                                  color: Palette.iconColor,
+                                ),
+                                enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                        color: Palette.textColor1
+                                    ),
+                                    borderRadius: BorderRadius.all(Radius.circular(35.0))
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                        color: Palette.textColor1
+                                    ),
+                                    borderRadius: BorderRadius.all(Radius.circular(35.0))
+                                ),
+                                hintText: 'User name',
+                                hintStyle: TextStyle(
+                                    fontSize: 14,
+                                    color: Palette.textColor1
+                                ),
+                                contentPadding: EdgeInsets.all(10)
+                            ),
                           )
                         ],
                       ),
@@ -186,7 +241,39 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
           ),
 
           ),
-
+          Positioned(
+            top: 430,
+              left: 0,
+              right: 0,
+              child: Center(
+                child: Container(
+                  padding: EdgeInsets.all(15),
+                  height: 90,
+                  width: 90,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(50)
+                  ),
+                  child:Container(
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [Colors.orange, Colors.red],
+                        begin:Alignment.topLeft,
+                        end: Alignment.bottomRight),
+                        borderRadius: BorderRadius.circular(30),
+                        boxShadow: [
+                         BoxShadow(
+                           color: Colors.black.withOpacity(0.3),
+                           spreadRadius: 1,
+                           blurRadius: 1
+                         )
+                        ]
+                      ,
+                    ),
+                  )
+                ),
+              ),
+          ),
         ],
       )
     );
