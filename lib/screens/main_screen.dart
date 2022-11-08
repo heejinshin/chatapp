@@ -71,7 +71,7 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                   ),
                 ),
               ),
-          //포지션2;텍스트폼필드
+          // 포지션2;텍스트폼필드
           Positioned(
             top: 180,
             child: Container(
@@ -241,6 +241,7 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
           ),
 
           ),
+          // 포지션3; 전송버튼
           Positioned(
             top: 430,
               left: 0,
@@ -265,13 +266,43 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                          BoxShadow(
                            color: Colors.black.withOpacity(0.3),
                            spreadRadius: 1,
-                           blurRadius: 1
-                         )
-                        ]
-                      ,
+                           blurRadius: 1,
+                           offset: Offset(0, 1),
+                         ),
+                        ],
+                    ),
+                    child: Icon(
+                      Icons.arrow_forward,
+                      color: Colors.white,
                     ),
                   )
                 ),
+              ),
+          ),
+          Positioned(
+              top: MediaQuery.of(context).size.height-125,  // 스크린의 세로 길이를 계산
+              right: 0,
+              left: 0,
+              child: Column(
+                children: [
+                  Text('or Signup with'),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  TextButton.icon(
+                    onPressed: (){},
+                    style: TextButton.styleFrom(
+                      primary: Colors.white,
+                      minimumSize: Size(155, 40),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      backgroundColor: Palette.googleColor
+                    ),
+                    icon: Icon(Icons.add),
+                    label: Text("Google"),
+                  ),
+                ],
               ),
           ),
         ],
